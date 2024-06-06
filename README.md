@@ -1,3 +1,6 @@
+[![Deploy to GitHub Pages](https://github.com/Juniors017/Docusaurus-base/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/Juniors017/Docusaurus-base/actions/workflows/deploy.yml)
+
+
 # Website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
