@@ -90,3 +90,25 @@ html[data-theme='dark'] .alert--docu {
   background-color: initial;
   text-align: initial;
 }
+
+.homehero {
+background-color : rgb(215 222 77);}
+
+html[data-theme='dark'] .homehero {
+  background-color : rgb(215 222 77);
+  color:rgba(0, 0, 0, 0.747);
+}
+  
+
+.homebody {
+  background-color : rgb(142 198 83);
+  
+  }
+
+
+html[data-theme='dark'] .homebody {
+    background-color : rgb(142 198 83);
+    color:rgba(0, 0, 0, 0.747);
+    
+  }
+    

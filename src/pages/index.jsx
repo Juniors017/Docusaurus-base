@@ -14,8 +14,8 @@ function HomepageHeader() {
   return (
 
 
-
-  <div className="container margin-top--lg">
+<div className='homehero padding-vert--lg'>
+  <div className="container margin-top--lg" >
   <div className="row ">
     
     <div className="col col--1">
@@ -38,6 +38,7 @@ function HomepageHeader() {
 
     
     </div>
+    </div>
   );
 }
 
@@ -47,8 +48,9 @@ export default function Home() {
     <Layout>
       <HomepageHeader />
       <main>
+      <div className='homebody padding-vert--lg'>
       <div className="container margin-top--lg">
-  <div className="row ">
+  <div className="row">
     
     <div className="col ">
       <div className=""></div>
@@ -66,8 +68,9 @@ export default function Home() {
   </div>
 
     
-    </div>
+    </div></div>
       </main>
+
     </Layout>
   );
 }
