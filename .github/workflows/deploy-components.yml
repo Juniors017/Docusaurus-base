@@ -15,7 +15,7 @@ jobs:
       matrix:
         component:
           - component-A
-         
+          
 
     steps:
     - name: Checkout repository
@@ -23,8 +23,9 @@ jobs:
 
     - name: Clone component repository
       run: |
-        git clone https://github.com/Juniors017 /${{ matrix.component }}.git
-        cp -r ${{ matrix.component }}/Components Components/${{ matrix.component }}
+        git clone https://github.com/Juniors017/${{ matrix.component }}.git
+        mkdir -p docs/${{ matrix.component }}
+        cp -r ${{ matrix.component }}/docs/* docs/${{ matrix.component }}
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
@@ -41,4 +42,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build/${{ matrix.component }}
+        publish_dir: ./build
