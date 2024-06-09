@@ -24,7 +24,7 @@ jobs:
     - name: Clone component repository
       run: |
         git clone https://github.com/Juniors017 /${{ matrix.component }}.git
-        cp -r ${{ matrix.component }}/docs docs/${{ matrix.component }}
+        cp -r ${{ matrix.component }}/Components Components/${{ matrix.component }}
 
     - name: Set up Node.js
       uses: actions/setup-node@v2
