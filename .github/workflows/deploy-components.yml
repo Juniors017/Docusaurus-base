@@ -1,4 +1,3 @@
-# .github/workflows/deploy-components.yml
 name: Deploy Component Sites
 
 on:
@@ -16,14 +15,13 @@ jobs:
         component:
           - component-A
           
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
     - name: Clone component repository
       run: |
-        git clone https://github.com/Juniors017/${{ matrix.component }}.git
+        git clone https://${{ secrets.PAT }}@github.com/Juniors017/${{ matrix.component }}.git
         mkdir -p docs/${{ matrix.component }}
         cp -r ${{ matrix.component }}/docs/* docs/${{ matrix.component }}
 
