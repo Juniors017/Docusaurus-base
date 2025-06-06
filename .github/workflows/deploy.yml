@@ -1,3 +1,4 @@
+
 name: Build and Deploy
 
 on:
@@ -18,11 +19,17 @@ jobs:
         with:
           node-version: 20
 
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Prepare specific version of Yarn
+        run: corepack prepare yarn@4.3.1 --activate
+
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
       - name: Build project
-        run: npm run build
+        run: yarn build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
