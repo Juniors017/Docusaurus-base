@@ -1,4 +1,3 @@
-
 name: Build and Deploy
 
 on:
@@ -19,12 +18,11 @@ jobs:
         with:
           node-version: 20
 
-
       - name: Install dependencies
         run: npm install
 
       - name: Build project
-        run: npm build
+        run: npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
@@ -40,6 +38,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
