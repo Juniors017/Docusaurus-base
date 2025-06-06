@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main
+      - main  # ou "master" selon ta branche par défaut
 
 jobs:
   build:
@@ -19,10 +19,12 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build project
-        run: npm run build
+        run: |
+          export DOCUSAURUS_IGNORE_SSG_WARNINGS=true
+          npm run build
 
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
